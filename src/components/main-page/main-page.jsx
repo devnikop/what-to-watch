@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const MainPage = ({ movies }) => {
+const MainPage = ({movies, onClick}) => {
   return (
     <>
-      <section className="movie-card">
+      <section className="movie-card" onClick={onClick}>
         <div className="movie-card__bg">
           <img
             src="img/bg-the-grand-budapest-hotel.jpg"
@@ -188,6 +188,7 @@ const MainPage = ({ movies }) => {
 
 MainPage.propTypes = {
   movies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onClick: PropTypes.func,
 };
 
 export default MainPage;

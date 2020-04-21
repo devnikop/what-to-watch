@@ -7,10 +7,16 @@
     "@babel/core": "7.9.0",
     "@babel/preset-env": "7.9.5",
     "@babel/preset-react": "7.9.4",
+    "@types/jest": "25.2.1",
+    "babel-jest": "25.4.0",
     "babel-loader": "8.1.0",
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16": "1.15.2",
     "eslint": "6.8.0",
     "eslint-config-htmlacademy": "0.5.2",
     "eslint-plugin-react": "7.19.0",
+    "jest": "25.4.0",
+    "react-test-renderer": "16.13.1",
     "webpack": "4.42.1",
     "webpack-cli": "3.3.11",
     "webpack-dev-server": "3.10.3"
@@ -19,7 +25,7 @@
     "build": "webpack --mode development",
     "start": "webpack-dev-server",
     "eslint": "eslint src/**/*.js src/**/*.jsx",
-    "test": "npm run eslint"
+    "test": "npm run eslint && jest"
   },
   "engines": {
     "node": "10"
@@ -28,5 +34,10 @@
     "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>setup-tests.js"
+    ]
   }
 }

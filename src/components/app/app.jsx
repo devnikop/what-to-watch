@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import MainPage from "../main-page/main-page.jsx";
 
 const App = ({movies}) => {
-  return <MainPage movies={movies} />;
+  return <MainPage movies={movies} onClick={() => {}} />;
 };
 
 App.propTypes = {
