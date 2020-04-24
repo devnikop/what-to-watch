@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const MainPage = ({ movies, onClick }) => {
+import MovieCard from "../movie-card/movie-card.jsx";
+
+const MainPage = ({ movies }) => {
   return (
     <>
-      <section className="movie-card" onClick={onClick}>
+      <section className="movie-card">
         <div className="movie-card__bg">
           <img
             src="img/bg-the-grand-budapest-hotel.jpg"
@@ -136,28 +138,8 @@ const MainPage = ({ movies, onClick }) => {
           </ul>
 
           <div className="catalog__movies-list">
-            {movies.map((movie, index) => (
-              <article
-                className="small-movie-card catalog__movies-card"
-                key={index}
-              >
-                <button className="small-movie-card__play-btn" type="button">
-                  Play
-                </button>
-                <div className="small-movie-card__image">
-                  <img
-                    src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
-                    alt={movie}
-                    width="280"
-                    height="175"
-                  />
-                </div>
-                <h3 className="small-movie-card__title">
-                  <a className="small-movie-card__link" href="movie-page.html">
-                    {movie}
-                  </a>
-                </h3>
-              </article>
+            {movies.map((movie) => (
+              <MovieCard movie={movie} key={movie.id} />
             ))}
           </div>
 
@@ -187,8 +169,13 @@ const MainPage = ({ movies, onClick }) => {
 };
 
 MainPage.propTypes = {
-  movies: PropTypes.arrayOf(PropTypes.string).isRequired,
-  onClick: PropTypes.func,
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      src: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default MainPage;
