@@ -8,9 +8,11 @@ class MovieCards extends React.PureComponent {
     super(props);
 
     this.state = {
+      idPlay: -1,
       idActive: -1,
     };
 
+    this._onPlayClickBinded = this._onPlayClick.bind(this);
     this._mouseEnterHandlerBinded = this._mouseEnterHandler.bind(this);
     this._mouseLeaveHandlerBinded = this._mouseLeaveHandler.bind(this);
   }
@@ -24,12 +26,19 @@ class MovieCards extends React.PureComponent {
           <MovieCard
             key={movie.id}
             movie={movie}
+            onClick={this._onPlayClickBinded}
             onMouseEnter={this._mouseEnterHandlerBinded}
             onMouseLeave={this._mouseLeaveHandlerBinded}
           />
         ))}
       </div>
     );
+  }
+
+  _onPlayClick(id) {
+    this.setState({
+      idPlay: id,
+    });
   }
 
   _mouseEnterHandler(id) {
@@ -51,7 +60,7 @@ MovieCards.propTypes = {
       id: PropTypes.number.isRequired,
       src: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
-    })
+    }).isRequired
   ).isRequired,
 };
 

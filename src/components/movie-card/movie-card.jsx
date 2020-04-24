@@ -1,8 +1,12 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-const MovieCard = ({ movie, onMouseEnter, onMouseLeave }) => {
+const MovieCard = ({ movie, onMouseEnter, onMouseLeave, onClick }) => {
   const { id, src, title } = movie;
+
+  const _onClickHandler = () => {
+    onClick(id);
+  };
 
   const _onMouseEnterHandler = () => {
     onMouseEnter(id);
@@ -14,7 +18,11 @@ const MovieCard = ({ movie, onMouseEnter, onMouseLeave }) => {
       onMouseEnter={_onMouseEnterHandler}
       onMouseLeave={onMouseLeave}
     >
-      <button className="small-movie-card__play-btn" type="button">
+      <button
+        className="small-movie-card__play-btn"
+        type="button"
+        onClick={_onClickHandler}
+      >
         Play
       </button>
       <div className="small-movie-card__image">
@@ -34,7 +42,8 @@ MovieCard.propTypes = {
     id: PropTypes.number.isRequired,
     src: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-  }),
+  }).isRequired,
+  onClick: PropTypes.func.isRequired,
   onMouseEnter: PropTypes.func.isRequired,
   onMouseLeave: PropTypes.func.isRequired,
 };

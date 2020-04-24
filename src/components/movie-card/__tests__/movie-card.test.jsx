@@ -18,6 +18,7 @@ it(`snapshot`, () => {
     .create(
       <MovieCard
         movie={movie}
+        onClick={jest.fn()}
         onMouseEnter={jest.fn()}
         onMouseLeave={jest.fn()}
       />
