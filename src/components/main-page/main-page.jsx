@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const MainPage = ({movies, onClick}) => {
+const MainPage = ({ movies, onClick }) => {
   return (
     <>
       <section className="movie-card" onClick={onClick}>
