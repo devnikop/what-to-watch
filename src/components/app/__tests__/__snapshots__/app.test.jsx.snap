@@ -4,7 +4,6 @@ exports[`App renders correctly 1`] = `
 Array [
   <section
     className="movie-card"
-    onClick={[Function]}
   >
     <div
       className="movie-card__bg"
@@ -260,6 +259,8 @@ Array [
       >
         <article
           className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
           <button
             className="small-movie-card__play-btn"
@@ -271,9 +272,9 @@ Array [
             className="small-movie-card__image"
           >
             <img
-              alt="df"
+              alt="Fantastic Beasts"
               height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+              src="source_11"
               width="280"
             />
           </div>
@@ -284,12 +285,14 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              df
+              Fantastic Beasts
             </a>
           </h3>
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
           <button
             className="small-movie-card__play-btn"
@@ -301,9 +304,9 @@ Array [
             className="small-movie-card__image"
           >
             <img
-              alt="sdf"
+              alt="Aviator"
               height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+              src="source_22"
               width="280"
             />
           </div>
@@ -314,7 +317,39 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              sdf
+              Aviator
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <button
+            className="small-movie-card__play-btn"
+            type="button"
+          >
+            Play
+          </button>
+          <div
+            className="small-movie-card__image"
+          >
+            <img
+              alt="Bohemian rhapsody"
+              height="175"
+              src="source_33"
+              width="280"
+            />
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+            >
+              Bohemian rhapsody
             </a>
           </h3>
         </article>

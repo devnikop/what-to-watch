@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
 
-import App from "../app.jsx";
+import MovieCards from "../movie-cards.jsx";
 
 const mock = {
   movies: [
@@ -23,10 +23,9 @@ const mock = {
   ],
 };
 
-it(`App renders correctly`, () => {
+it(`snapshot`, () => {
   const { movies } = mock;
 
-  const tree = renderer.create(<App movies={movies} />).toJSON();
-
+  const tree = renderer.create(<MovieCards movies={movies} />).toJSON();
   expect(tree).toMatchSnapshot();
 });

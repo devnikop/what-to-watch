@@ -3,6 +3,8 @@
 exports[`snapshot 1`] = `
 <article
   className="small-movie-card catalog__movies-card"
+  onMouseEnter={[Function]}
+  onMouseLeave={[MockFunction]}
 >
   <button
     className="small-movie-card__play-btn"

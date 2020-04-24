@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import MovieCard from "../movie-card/movie-card.jsx";
+import MovieCards from "../movie-cards/movie-cards.jsx";
 
 const MainPage = ({ movies }) => {
   return (
@@ -137,11 +137,7 @@ const MainPage = ({ movies }) => {
             </li>
           </ul>
 
-          <div className="catalog__movies-list">
-            {movies.map((movie) => (
-              <MovieCard movie={movie} key={movie.id} />
-            ))}
-          </div>
+          <MovieCards movies={movies} />
 
           <div className="catalog__more">
             <button className="catalog__button" type="button">

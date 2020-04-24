@@ -5,6 +5,7 @@ import MovieCard from "../movie-card.jsx";
 
 const mock = {
   movie: {
+    id: 1,
     src: `source`,
     title: `movie title`,
   },
@@ -13,6 +14,14 @@ const mock = {
 it(`snapshot`, () => {
   const { movie } = mock;
 
-  const tree = renderer.create(<MovieCard movie={movie} />).toJSON();
+  const tree = renderer
+    .create(
+      <MovieCard
+        movie={movie}
+        onMouseEnter={jest.fn()}
+        onMouseLeave={jest.fn()}
+      />
+    )
+    .toJSON();
   expect(tree).toMatchSnapshot();
 });

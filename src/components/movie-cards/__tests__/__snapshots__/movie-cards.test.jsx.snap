@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<div
+  className="catalog__movies-list"
+>
+  <article
+    className="small-movie-card catalog__movies-card"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <button
+      className="small-movie-card__play-btn"
+      type="button"
+    >
+      Play
+    </button>
+    <div
+      className="small-movie-card__image"
+    >
+      <img
+        alt="Fantastic Beasts"
+        height="175"
+        src="source_11"
+        width="280"
+      />
+    </div>
+    <h3
+      className="small-movie-card__title"
+    >
+      <a
+        className="small-movie-card__link"
+        href="movie-page.html"
+      >
+        Fantastic Beasts
+      </a>
+    </h3>
+  </article>
+  <article
+    className="small-movie-card catalog__movies-card"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <button
+      className="small-movie-card__play-btn"
+      type="button"
+    >
+      Play
+    </button>
+    <div
+      className="small-movie-card__image"
+    >
+      <img
+        alt="Aviator"
+        height="175"
+        src="source_22"
+        width="280"
+      />
+    </div>
+    <h3
+      className="small-movie-card__title"
+    >
+      <a
+        className="small-movie-card__link"
+        href="movie-page.html"
+      >
+        Aviator
+      </a>
+    </h3>
+  </article>
+  <article
+    className="small-movie-card catalog__movies-card"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <button
+      className="small-movie-card__play-btn"
+      type="button"
+    >
+      Play
+    </button>
+    <div
+      className="small-movie-card__image"
+    >
+      <img
+        alt="Bohemian rhapsody"
+        height="175"
+        src="source_33"
+        width="280"
+      />
+    </div>
+    <h3
+      className="small-movie-card__title"
+    >
+      <a
+        className="small-movie-card__link"
+        href="movie-page.html"
+      >
+        Bohemian rhapsody
+      </a>
+    </h3>
+  </article>
+</div>
+`;
