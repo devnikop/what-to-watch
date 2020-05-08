@@ -1,12 +1,10 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-const MovieCard = ({ movie, onMouseEnter, onMouseLeave, onClick }) => {
-  const { id, src, title } = movie;
+import VideoPlayer from "../video-player/video-player.jsx";
 
-  const _onClickHandler = () => {
-    onClick(id);
-  };
+const MovieCard = ({ isPlaying, movie, onMouseEnter, onMouseLeave }) => {
+  const { id, poster, src, title } = movie;
 
   const _onMouseEnterHandler = () => {
     onMouseEnter(id);
@@ -18,15 +16,8 @@ const MovieCard = ({ movie, onMouseEnter, onMouseLeave, onClick }) => {
       onMouseEnter={_onMouseEnterHandler}
       onMouseLeave={onMouseLeave}
     >
-      <button
-        className="small-movie-card__play-btn"
-        type="button"
-        onClick={_onClickHandler}
-      >
-        Play
-      </button>
       <div className="small-movie-card__image">
-        <img src={src} alt={title} width="280" height="175" />
+        <VideoPlayer isPlaying={isPlaying} poster={poster} src={src} />
       </div>
       <h3 className="small-movie-card__title">
         <a className="small-movie-card__link" href="movie-page.html">
@@ -38,12 +29,13 @@ const MovieCard = ({ movie, onMouseEnter, onMouseLeave, onClick }) => {
 };
 
 MovieCard.propTypes = {
+  isPlaying: PropTypes.bool.isRequired,
   movie: PropTypes.shape({
     id: PropTypes.number.isRequired,
+    poster: PropTypes.string.isRequired,
     src: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
   }).isRequired,
-  onClick: PropTypes.func.isRequired,
   onMouseEnter: PropTypes.func.isRequired,
   onMouseLeave: PropTypes.func.isRequired,
 };

@@ -9,10 +9,10 @@ class MovieCards extends React.PureComponent {
 
     this.state = {
       idPlay: -1,
-      idActive: -1,
     };
 
-    this._onPlayClickBinded = this._onPlayClick.bind(this);
+    this._timer = null;
+
     this._mouseEnterHandlerBinded = this._mouseEnterHandler.bind(this);
     this._mouseLeaveHandlerBinded = this._mouseLeaveHandler.bind(this);
   }
@@ -24,9 +24,9 @@ class MovieCards extends React.PureComponent {
       <div className="catalog__movies-list">
         {movies.map((movie) => (
           <MovieCard
+            isPlaying={this.state.idPlay === movie.id}
             key={movie.id}
             movie={movie}
-            onClick={this._onPlayClickBinded}
             onMouseEnter={this._mouseEnterHandlerBinded}
             onMouseLeave={this._mouseLeaveHandlerBinded}
           />
@@ -35,21 +35,20 @@ class MovieCards extends React.PureComponent {
     );
   }
 
-  _onPlayClick(id) {
-    this.setState({
-      idPlay: id,
-    });
-  }
+
 
   _mouseEnterHandler(id) {
-    this.setState({
-      idActive: id,
-    });
+    this._timer = setTimeout(() => {
+      this.setState({
+        idPlay: id,
+      });
+    }, 1000)
   }
 
   _mouseLeaveHandler() {
+    this._timer = null;
     this.setState({
-      idActive: -1,
+      idPlay: -1,
     });
   }
 }

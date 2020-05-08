@@ -1,27 +1,32 @@
 export default [
   {
     id: 1,
-    src: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    poster: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     title: `Fantastic Beasts`,
   },
   {
     id: 2,
-    src: `img/aviator.jpg`,
+    poster: `img/aviator.jpg`,
+    src: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
     title: `Aviator`,
   },
   {
     id: 3,
-    src: `img/bohemian-rhapsody.jpg`,
+    poster: `img/bohemian-rhapsody.jpg`,
+    src: ``,
     title: `Bohemian rhapsody`,
   },
   {
     id: 4,
-    src: `img/johnny-english.jpg`,
+    poster: `img/johnny-english.jpg`,
+    src: ``,
     title: `Johnny english`,
   },
   {
     id: 5,
-    src: `img/pulp-fiction.jpg`,
+    poster: `img/pulp-fiction.jpg`,
+    src: ``,
     title: `Pulp fiction`,
   },
 ];
