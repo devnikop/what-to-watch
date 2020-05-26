@@ -1,4 +1,4 @@
-import moviesList from "../mocks/films";
+// import moviesList from "../mocks/films";
 
 const initialState = {
   activeGenre: `All genres`,
