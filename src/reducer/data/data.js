@@ -1,3 +1,5 @@
+import { modelMovies } from "./movie-adapter";
+
 const initialState = {
   activeGenre: `All genres`,
   movies: [],
@@ -23,7 +25,8 @@ const ActionCreator = {
 const Operation = {
   load_movies: () => async (dispatch, _getState, api) => {
     const response = await api.get(`/films`);
-    dispatch(ActionCreator.load_movies(response.data));
+    const movies = modelMovies(response.data);
+    dispatch(ActionCreator.load_movies(movies));
   },
 };
 
