@@ -5,9 +5,11 @@
   "description": "Личный проект «Что посмотреть» от HTML Academy",
   "devDependencies": {
     "@babel/core": "7.9.0",
+    "@babel/plugin-transform-runtime": "7.9.6",
     "@babel/preset-env": "7.9.5",
     "@babel/preset-react": "7.9.4",
     "@types/jest": "25.2.1",
+    "axios-mock-adapter": "1.18.1",
     "babel-jest": "25.4.0",
     "babel-loader": "8.1.0",
     "enzyme": "3.11.0",
@@ -31,6 +33,7 @@
     "node": "10"
   },
   "dependencies": {
+    "@babel/runtime": "7.9.6",
     "axios": "0.19.2",
     "prop-types": "15.7.2",
     "react": "16.13.1",

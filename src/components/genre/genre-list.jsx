@@ -2,7 +2,8 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import React from "react";
 
-import { ActionCreators } from "../../store/reducer";
+import { ActionCreator } from "../../reducer/data/data";
+import { getGenre, getUniqueGenres } from "../../reducer/data/selectors";
 
 const Genre = ({ activeGenre, genres, onClick }) => {
   const _handlerGenreClick = (evt) => {
@@ -10,23 +11,27 @@ const Genre = ({ activeGenre, genres, onClick }) => {
     onClick(evt.currentTarget.textContent);
   };
 
-  return <ul className="catalog__genres-list">
-    {genres.map((genre, index) => <li
-      className={`
+  return (
+    <ul className="catalog__genres-list">
+      {genres.map((genre, index) => (
+        <li
+          className={`
         catalog__genres-item
         ${activeGenre === genre && `catalog__genres-item--active`}
       `}
-      key={`genre-${index}`}
-    >
-      <a
-        href="#"
-        className="catalog__genres-link"
-        onClick={_handlerGenreClick}
-      >
-        {genre}
-      </a>
-    </li>)}
-  </ul>
+          key={`genre-${index}`}
+        >
+          <a
+            href="#"
+            className="catalog__genres-link"
+            onClick={_handlerGenreClick}
+          >
+            {genre}
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
 };
 
 Genre.propTypes = {
@@ -36,15 +41,12 @@ Genre.propTypes = {
 };
 
 const mapState = (state) => ({
-  activeGenre: state.activeGenre,
-  genres: [...state.movies.reduce((acc, movie) =>
-    acc.add(movie.genre),
-    new Set([`All genres`])
-  )],
+  activeGenre: getGenre(state),
+  genres: getUniqueGenres(state),
 });
 
 const mapDispatch = {
-  onClick: ActionCreators.setGenre
+  onClick: ActionCreator.setGenre,
 };
 
 export { Genre };

@@ -13,4 +13,4 @@ export const configureAPI = (dispatch) => {
   api.interceptors.response.use(onFulfilled, onRejected);
 
   return api;
-}
+};

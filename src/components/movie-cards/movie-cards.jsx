@@ -3,6 +3,7 @@ import React from "react";
 
 import MovieCard from "../movie-card/movie-card.jsx";
 import { connect } from "react-redux";
+import { getMovies } from "../../reducer/data/selectors.js";
 
 class MovieCards extends React.PureComponent {
   constructor(props) {
@@ -36,14 +37,12 @@ class MovieCards extends React.PureComponent {
     );
   }
 
-
-
   _mouseEnterHandler(id) {
     this._timer = setTimeout(() => {
       this.setState({
         idPlay: id,
       });
-    }, 1000)
+    }, 1000);
   }
 
   _mouseLeaveHandler() {
@@ -55,22 +54,12 @@ class MovieCards extends React.PureComponent {
 }
 
 MovieCards.propTypes = {
-  movies: PropTypes.arrayOf(PropTypes.shape({
-    genre: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
-    poster: PropTypes.string.isRequired,
-    src: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  }).isRequired),
+  movies: PropTypes.array.isRequired,
 };
 
 const mapState = (state) => ({
-  movies: state.movies.filter((movie) =>
-    state.activeGenre === `All genres`
-      ? true
-      : movie.genre === state.activeGenre
-  ),
+  movies: getMovies(state),
 });
 
 export { MovieCards };
-export default connect(mapState)(MovieCards)
+export default connect(mapState)(MovieCards);
