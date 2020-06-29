@@ -1,26 +1,56 @@
 # What to watch
+> Simple project to create a list of films for later viewing.
 
-Project for mastering react
+![Preview screenshot](./readme_assets/preview.jpg)
 
-## Getting Started
+## [Live demo](https://github.com/devnikop/what-to-watch)
+
+## Table of Contents
+
+* [General info](#General-info)
+* [Technologies](#Technologies)
+* [Setup](#Setup)
+* [Features](#Features)
+
+## General info
+
+This web application was created for mastering React.js.
+
+## Technologies
+
+* [React](https://reactjs.org/)
+* [Redux](https://redux.js.org/)
+* [Jest](https://jestjs.io/)
+
+## Setup
+
+To run this project, install it locally using npm:
 
 ### Prerequisites
 
 - Node.js v.12.13.1
 - Npm v.6.12.0
 
-## Installing
+### Installing
 
-- `npm i`
-- `npm run start`
+```
+npm run install
+npm run start
+```
 
-## Deployment
+## Features
 
-- `npm run build`
+* This app has no real use, it was created only to improve my knowledge of some technologies.
 
-## Built With
+### To do
 
-- [React](https://reactjs.org/) - JavaScript library for building user interfaces.
-- [Redux](https://redux.js.org/) - JavaScript library for managing application state.
-- [Jest](https://jestjs.io/) - JavaScript Testing Framework.
-- [Webpack](https://webpack.js.org/) - JavaScript module bundler.
+* Add routing
+* Rewrite on typescript
+
+## Inspiration
+
+This app is based on [Html Academy](https://htmlacademy.ru/)'s intensive [React. Разработка сложных клиентских приложений](https://htmlacademy.ru/intensive/react).
+
+## License
+
+[MIT License](LICENSE.md)
