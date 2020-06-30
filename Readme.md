@@ -40,7 +40,7 @@ npm run start
 
 ## Features
 
-* This app has no real use, it was created only to improve my knowledge of some technologies.
+* This app has no real use, it was created only to practice with some technologies.
 
 ### To do
 
