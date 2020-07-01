@@ -3,7 +3,7 @@
 
 ![Preview screenshot](./readme_assets/preview.jpg)
 
-## [Live demo](https://github.com/devnikop/what-to-watch)
+## [Live demo](https://github.com/devnikop/what-to-watch)(not available yet)
 
 ## Table of Contents
 
